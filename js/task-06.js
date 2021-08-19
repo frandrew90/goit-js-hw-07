@@ -23,3 +23,24 @@
 // #validation-input.invalid {
 //   border-color: #f44336;
 // }
+
+const inpRef = document.querySelector('#validation-input');
+
+inpRef.addEventListener('blur', inOutOfFocus);
+
+function inOutOfFocus(e) {
+  if (e.target.value.length === Number(e.target.dataset.length)) {
+    e.target.classList.add('valid');
+    e.target.classList.remove('invalid');
+    return;
+  }
+
+  if (e.target.value.length === 0) {
+    e.target.classList.remove('valid');
+    e.target.classList.remove('invalid');
+    return;
+  }
+
+  e.target.classList.add('invalid');
+  e.target.classList.remove('valid');
+}
