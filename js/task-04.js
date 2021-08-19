@@ -20,10 +20,6 @@ const refs = {
   incButton: container.querySelector('[data-action="increment"]'),
 };
 
-console.log(container);
-
-console.log(refs);
-
 let num = Number(refs.value.textContent);
 
 refs.incButton.addEventListener('click', incFn);
