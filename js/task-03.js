@@ -25,5 +25,3 @@ const galleryList = images.map(
 );
 
 galleryRef.insertAdjacentHTML('beforeend', galleryList.join(''));
-
-console.log(galleryList);

@@ -28,19 +28,74 @@ const inpRef = document.querySelector('#validation-input');
 
 inpRef.addEventListener('blur', onOutOfFocus);
 
+// ---------------------------------------------------------------------------------
+// function addClass(classForAdd) {
+//   inpRef.classList.add(classForAdd);
+// }
+
+// function removeClass(classForRemove) {
+//   inpRef.classList.remove(classForRemove);
+// }
+
+// function onOutOfFocus(e) {
+//   if (e.target.value.length === Number(e.target.dataset.length)) {
+//     addClass('valid');
+//     removeClass('invalid');
+//     return;
+//   }
+
+//   if (e.target.value.length === 0) {
+//     removeClass('invalid');
+//     removeClass('valid');
+//     return;
+//   }
+
+//   addClass('invalid');
+//   removeClass('valid');
+// }
+// -----------------------------------------------------------------------------------
+function upgradeClass(addClass, removeClass) {
+  inpRef.classList.add(addClass);
+  inpRef.classList.remove(removeClass);
+}
+
+function removeClasses(firstClassForRemove, secondClassForRemove) {
+  inpRef.classList.remove(firstClassForRemove);
+  inpRef.classList.remove(secondClassForRemove);
+}
+
 function onOutOfFocus(e) {
   if (e.target.value.length === Number(e.target.dataset.length)) {
-    e.target.classList.add('valid');
-    e.target.classList.remove('invalid');
+    upgradeClass('valid', 'invalid');
     return;
   }
 
   if (e.target.value.length === 0) {
-    e.target.classList.remove('valid');
-    e.target.classList.remove('invalid');
+    removeClasses('invalid', 'valid');
+
     return;
   }
 
-  e.target.classList.add('invalid');
-  e.target.classList.remove('valid');
+  upgradeClass('invalid', 'valid');
 }
+
+// --------------------------------------------------------------------------------------------------
+
+// function onOutOfFocus(e) {
+//   if (e.target.value.length === Number(e.target.dataset.length)) {
+//     e.target.classList.add('valid');
+//     e.target.classList.remove('invalid');
+//     return;
+//   }
+
+//   if (e.target.value.length === 0) {
+//     e.target.classList.remove('valid');
+//     e.target.classList.remove('invalid');
+//     return;
+//   }
+
+//   e.target.classList.add('invalid');
+//   e.target.classList.remove('valid');
+// }
+
+// ----------------------------------------------------------------------------------------

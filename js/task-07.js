@@ -25,7 +25,5 @@ refs.input.addEventListener('input', onChangeRange);
 // }
 
 function onChangeRange(e) {
-  console.log(e);
-  console.log(e.target.value);
   refs.text.style.fontSize = `${e.target.value}px`;
 }

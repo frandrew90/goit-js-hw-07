@@ -19,11 +19,6 @@ refs.input.addEventListener('input', inInputWriting);
 
 function inInputWriting(e) {
   const inputText = refs.input.value;
-  //   if (inputText === '') {
-  //     refs.text.textContent = 'незнакомец';
-  //   } else {
-  //     refs.text.textContent = inputText;
-  //   }
 
   inputText === ''
     ? (refs.text.textContent = 'незнакомец')
