@@ -26,9 +26,9 @@
 
 const inpRef = document.querySelector('#validation-input');
 
-inpRef.addEventListener('blur', inOutOfFocus);
+inpRef.addEventListener('blur', onOutOfFocus);
 
-function inOutOfFocus(e) {
+function onOutOfFocus(e) {
   if (e.target.value.length === Number(e.target.dataset.length)) {
     e.target.classList.add('valid');
     e.target.classList.remove('invalid');
