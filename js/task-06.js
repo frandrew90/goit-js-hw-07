@@ -28,6 +28,31 @@ const inpRef = document.querySelector('#validation-input');
 
 inpRef.addEventListener('blur', onOutOfFocus);
 
+function upgradeClass(addClass, removeClass) {
+  inpRef.classList.add(addClass);
+  inpRef.classList.remove(removeClass);
+}
+
+function removeClasses(firstClassForRemove, secondClassForRemove) {
+  inpRef.classList.remove(firstClassForRemove);
+  inpRef.classList.remove(secondClassForRemove);
+}
+
+function onOutOfFocus(e) {
+  if (e.target.value.length === Number(e.target.dataset.length)) {
+    upgradeClass('valid', 'invalid');
+    return;
+  }
+
+  if (e.target.value.length === 0) {
+    removeClasses('invalid', 'valid');
+
+    return;
+  }
+
+  upgradeClass('invalid', 'valid');
+}
+
 // ---------------------------------------------------------------------------------
 // function addClass(classForAdd) {
 //   inpRef.classList.add(classForAdd);
@@ -54,31 +79,6 @@ inpRef.addEventListener('blur', onOutOfFocus);
 //   removeClass('valid');
 // }
 // -----------------------------------------------------------------------------------
-function upgradeClass(addClass, removeClass) {
-  inpRef.classList.add(addClass);
-  inpRef.classList.remove(removeClass);
-}
-
-function removeClasses(firstClassForRemove, secondClassForRemove) {
-  inpRef.classList.remove(firstClassForRemove);
-  inpRef.classList.remove(secondClassForRemove);
-}
-
-function onOutOfFocus(e) {
-  if (e.target.value.length === Number(e.target.dataset.length)) {
-    upgradeClass('valid', 'invalid');
-    return;
-  }
-
-  if (e.target.value.length === 0) {
-    removeClasses('invalid', 'valid');
-
-    return;
-  }
-
-  upgradeClass('invalid', 'valid');
-}
-
 // --------------------------------------------------------------------------------------------------
 
 // function onOutOfFocus(e) {
