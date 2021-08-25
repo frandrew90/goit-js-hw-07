@@ -24,6 +24,8 @@
 //   border-color: #f44336;
 // }
 
+// ------------------------------------------------------------------------------------
+
 const inpRef = document.querySelector('#validation-input');
 
 inpRef.addEventListener('blur', onOutOfFocus);
@@ -99,3 +101,31 @@ function onOutOfFocus(e) {
 // }
 
 // ----------------------------------------------------------------------------------------
+// const inpRef = document.querySelector('#validation-input');
+
+// inpRef.addEventListener('blur', onOutOfFocus);
+
+// function upgradeClass(addClass, removeClass) {
+//   inpRef.classList.add(addClass);
+//   inpRef.classList.remove(removeClass);
+// }
+
+// function removeClasses(...classes) {
+//   classes.forEach(class => inpRef.classList.remove(class));
+
+// }
+
+// function onOutOfFocus(e) {
+//   if (e.target.value.length === Number(e.target.dataset.length)) {
+//     upgradeClass('valid', 'invalid');
+//     return;
+//   }
+
+//   if (e.target.value.length === 0) {
+//     removeClasses('invalid', 'valid');
+
+//     return;
+//   }
+
+//   upgradeClass('invalid', 'valid');
+// }
